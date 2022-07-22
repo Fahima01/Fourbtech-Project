@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ------poppins font-------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Nunito:wght@400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <section id="project">
+        <div class="project-heading">
+            <span>Let's See our Work</span>
+            <h3>OUR PROJECTS</h3>
+        </div>
+<!-- ---------filter----------------------- -->
+    <ul class="portfolio-filter">
+      <li class="list active" data-filter="all">All</li>
+      <li class="list" data-filter="app">Application</li>
+      <li class="list" data-filter="appdesign">App Design</li>
+      <li class="list" data-filter="web">Website Designs</li>
+      <li class="list" data-filter="ai">AI</li>
+    </ul>
+    <div class="product">
+        <div class="itembox app"><img src="/images/mobile1.jpg" alt=""></div>
+        <div class="itembox appdesign"><img src="/images/camera1.jpg" alt=""></div>
+        <div class="itembox web"><img src="images/watch1.jpg" alt=""></div>
+        <div class="itembox ai"><img src="images/shoe1.jpg" alt=""></div>
+        <div class="itembox app"><img src="/images/mobile2.jpg" alt=""></div>
+        <div class="itembox appdesign"><img src="/images/camera2.jpg" alt=""></div>
+        <div class="itembox web"><img src="images/watch2.jpg" alt=""></div>
+        <div class="itembox ai"><img src="images/shoe2.jpg" alt=""></div>
+        <div class="itembox app"><img src="/images/mobile3.jpg" alt=""></div>
+        <div class="itembox appdesign"><img src="/images/camera3.jpg" alt=""></div>
+        <div class="itembox web"><img src="images/watch3.jpg" alt=""></div>
+        <div class="itembox ai"><img src="images/shoe3.jpg" alt=""></div>
+        <!-- <div class="itembox app"><img src="/images/mobile4.jpg" alt=""></div>
+        <div class="itembox appdesign"><img src="/images/headphone4.jpg" alt=""></div>
+        <div class="itembox web"><img src="images/watch4.jpg" alt=""></div>
+        <div class="itembox ai"><img src="images/shoe4.jpg" alt=""></div>   -->
+    </div>
+
+
+
+    </section>
+    
+
+
+<!-- ------jquary cdn------------------- -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.list').click(function(){
+                const value = $(this).attr('data-filter');
+                if(value == 'all'){
+                    $('.itembox').show('1000');
+                }
+                else{
+                    $('.itembox').not('.'+value).hide('1000');
+                    $('.itembox').filter('.'+value).show('1000');
+                }
+            })
+            // ---active class on selected item----------
+            $('.list').click(function(){
+                $(this).addclass('active');
+            })
+        })
+    </script>
+</body>
+</html>
